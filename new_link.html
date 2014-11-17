@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+<body>
+<div>
+    the short link is
+    <div><b>{{ request }}{{ link.short_link }}</b></div>
+    for full link:
+    {{ link.full_link }}
+</div>
+
+<a href="/">New link</a>
+<a href="{{ url|safe }}">{{ url_linktext }}</a>
+
+</body>
+</html>
+{% endautoescape %}

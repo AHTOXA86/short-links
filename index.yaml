@@ -1,0 +1,6 @@
+indexes:
+- kind: Link
+  ancestor: yes
+  properties:
+  - name: short_link
+    direction: desc

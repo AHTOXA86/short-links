@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+<body>
+    <form action="/create" method="post">
+        <div><textarea name="full_link" rows="3" cols="60"></textarea></div>
+        <div><input type="submit" value="Create short link"></div>
+    </form>
+
+    {% if user %}
+        Hi <b>{{ user.nickname() }}</b>, you have this links:
+        <ul>
+        {% for link in links %}
+            <li><a href="{{ link.full_link }}">{{ link.full_link }}</a> - {{ request }}{{ link.short_link }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+    <a href="{{ url|safe }}">{{ url_linktext }}</a>
+    <div style="color: red;">{{ message }}</div>
+</body>
+</html>
+{% endautoescape %}
